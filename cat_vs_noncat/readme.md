@@ -13,13 +13,15 @@ We first took 10,000 images of cat and 10,000 images of dog and shuffled them. A
 
 </div>
 
-Where, ![](https://latex.codecogs.com/gif.latex?%24%20X.shape%20%3D%20%28n_x%2C%20m%29%2C%20%5C%5C%20W%5E%7B%5B1%5D%7D.shape%20%3D%20%2825%2C%20n_x%29%2C%20%5C%5C%20b%5E%7B%5B1%5D%7D.shape%20%3D%20%2825%2C%201%29%2C%20%5C%5C%20W%5E%7B%5B2%5D%7D.shape%20%3D%20%2812%2C%2025%29%20%5C%5C%20b%5E%7B%5B2%5D%7D.shape%20%3D%20%2812%2C%201%29%20%5C%5C%20W%5E%7B%5B3%5D%7D.shape%20%3D%20%282%2C%2012%29%20%5C%5C%20b%5E%7B%5B3%5D%7D.shape%20%3D%20%282%2C%201%29.%20%24)
+Where, 
+
+![](https://latex.codecogs.com/gif.latex?%24%20X.shape%20%3D%20%28n_x%2C%20m%29%2C%20%5C%5C%20W%5E%7B%5B1%5D%7D.shape%20%3D%20%2825%2C%20n_x%29%2C%20%5C%5C%20b%5E%7B%5B1%5D%7D.shape%20%3D%20%2825%2C%201%29%2C%20%5C%5C%20W%5E%7B%5B2%5D%7D.shape%20%3D%20%2812%2C%2025%29%20%5C%5C%20b%5E%7B%5B2%5D%7D.shape%20%3D%20%2812%2C%201%29%20%5C%5C%20W%5E%7B%5B3%5D%7D.shape%20%3D%20%282%2C%2012%29%20%5C%5C%20b%5E%7B%5B3%5D%7D.shape%20%3D%20%282%2C%201%29.%20%24)
 
 here ![](https://latex.codecogs.com/gif.latex?%24n_x%24) is 17,000.
 
 Also, the activation function used here ![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B1%5D%7D%24) and ![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B2%5D%7D%24) are relu. And the last function ![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B3%5D%7D%24) is the softmax.
 
-![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B3%5D%7D%24) is our final output which can also be said as ![](https://latex.codecogs.com/gif.latex?%24%24%5Chat%7By%7D%24%24). Hence our error is ![](https://latex.codecogs.com/gif.latex?%24%24L%28y%20-%20%5Chat%7By%7D%29%24%24). Also, our loss function is ![](https://latex.codecogs.com/gif.latex?%24%24Loss%20%3D%20-%28ylog%5Chat%7By%7D%20-%281-y%29log%281%20-%20%5Chat%7By%7D%29%29%24%24)$.
+![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B3%5D%7D%24) is our final output which can also be said as ![](https://latex.codecogs.com/gif.latex?%24%24%5Chat%7By%7D%24%24). Hence our error is ![](https://latex.codecogs.com/gif.latex?%24%24L%28y%20-%20%5Chat%7By%7D%29%24%24). Also, our loss function is ![](https://latex.codecogs.com/gif.latex?%24%24Loss%20%3D%20-%28ylog%5Chat%7By%7D%20-%281-y%29log%281%20-%20%5Chat%7By%7D%29%29%24%24).
 
 This is the function which we have to minimize.
 
