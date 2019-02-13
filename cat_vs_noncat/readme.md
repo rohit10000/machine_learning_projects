@@ -8,9 +8,13 @@ We first took 10,000 images of cat and 10,000 images of dog and shuffled them. A
 
 **Our model functions as follows:**
 <div style="background:#F7F7F7;width:600px;margin-left:200px">
-$$Z^{[1]} = W^{[1]}X + b^{[1]} \\ A^{[1]} = g^{[1]}(Z^{[1]}) \\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\ A^{[2]} = g^{[2]}(Z^{[2]}) \\ Z^{[3]} = W^{[3]}A^{[2]} + b^{[3]} \\ A^{[3]} = g^{[3]}(Z^{[3]})$$</div>
+    
+![model equation](https://latex.codecogs.com/gif.latex?%24%24Z%5E%7B%5B1%5D%7D%20%3D%20W%5E%7B%5B1%5D%7DX%20&plus;%20b%5E%7B%5B1%5D%7D%20%5C%5C%20A%5E%7B%5B1%5D%7D%20%3D%20g%5E%7B%5B1%5D%7D%28Z%5E%7B%5B1%5D%7D%29%20%5C%5C%20Z%5E%7B%5B2%5D%7D%20%3D%20W%5E%7B%5B2%5D%7DA%5E%7B%5B1%5D%7D%20&plus;%20b%5E%7B%5B2%5D%7D%20%5C%5C%20A%5E%7B%5B2%5D%7D%20%3D%20g%5E%7B%5B2%5D%7D%28Z%5E%7B%5B2%5D%7D%29%20%5C%5C%20Z%5E%7B%5B3%5D%7D%20%3D%20W%5E%7B%5B3%5D%7DA%5E%7B%5B2%5D%7D%20&plus;%20b%5E%7B%5B3%5D%7D%20%5C%5C%20A%5E%7B%5B3%5D%7D%20%3D%20g%5E%7B%5B3%5D%7D%28Z%5E%7B%5B3%5D%7D%29%24%24)
+
+</div>
 
 Where, $X.shape = (n_x, m), \\ W^{[1]}.shape = (25, n_x),  \\ b^{[1]}.shape = (25, 1),  \\ W^{[2]}.shape = (12, 25) \\ b^{[2]}.shape = (12, 1) \\ W^{[3]}.shape = (2, 12) \\ b^{[3]}.shape = (2, 1). $
+
 here $n_x$ is 17,000.
 
 Also, the activation function used here $g^{[1]}$ and $g^{[2]}$ are relu. And the last function $g^{[3]}$ is the softmax.
@@ -31,14 +35,14 @@ During training we have used Adam Optimizer to speed up our gradient training an
 When we completed with our training we get the weights which gave 99.42% training accuracy. But out model performed badly on test data with an accuracy of just 59.76%. The model is overfitted with the training data. The model graphs are shown below:
 
 ***Before regularization***
-<div class = "row"><img src = "./images/fig4.png" style="height:300px;width:300px">
+<div class = "row"><img src = "./images/fig4.PNG" style="height:300px;width:300px">
     
 So, to reduce high variance from the model few of the techniques are: increase the number of training images data which can be done either by adding some of the new clicked pics of dog-cat to the dataset or we can do data-augmentation on the available image data(i.e. generate image either by  croppping, flipping or rotating the image). We can also reduce the variance by regularization (either $L_1$ or $L_2$), dropout or by early stopping of model training.
 
 So, we introduce $L_2$ regularization to the loss function and introduce dropout at the activation neurons with the keep_prob of 0.7. 
     
 ***After regularization***
-<img src = "./images/fig5.png" style="height:300px;width:300px"></div>
+<img src = "./images/fig5.PNG" style="height:300px;width:300px"></div>
 
 Thereon, we get the total test accuracy of 74.67% which is an improvement over the previous test accuracy. That means we get an increment of 14.91% over test accuray after introducing regularization to the model architecture.
 
