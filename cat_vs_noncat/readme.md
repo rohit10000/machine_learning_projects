@@ -2,7 +2,7 @@
 
 This project contains two variations over the dog vs. cat problem. First, we did the classification using just a sigmid output layer were our model performed not so good with the train as well as test. We got the training accuracy of 57.34% and test accuracy of 56.77%. But later on we train the images of dog and cat using 2 hidden layer and 1 output layer and our accuracy stats got improved.
 
-We have trained a cat vs. dog classifier model using 2 hidden layer and 1 output layer. The output layer has two neuron units which gives one-hot vector output. If the output is $\begin{bmatrix}1\\ 0\end{bmatrix}$ meansthe corresponding image is labeled as cat and if it is $\begin{bmatrix}0\\ 1\end{bmatrix}$ means it is dog.
+We have trained a cat vs. dog classifier model using 2 hidden layer and 1 output layer. The output layer has two neuron units which gives one-hot vector output. If the output is ![](https://latex.codecogs.com/gif.latex?%24%5Cbegin%7Bbmatrix%7D1%5C%5C%200%5Cend%7Bbmatrix%7D%24) meansthe corresponding image is labeled as cat and if it is ![](https://latex.codecogs.com/gif.latex?%24%5Cbegin%7Bbmatrix%7D0%5C%5C%201%5Cend%7Bbmatrix%7D%24) means it is dog.
 
 We first took 10,000 images of cat and 10,000 images of dog and shuffled them. After shuffling, kept 17,000 images for training and 3,000 images for testing the model.
 
@@ -13,13 +13,13 @@ We first took 10,000 images of cat and 10,000 images of dog and shuffled them. A
 
 </div>
 
-Where, $X.shape = (n_x, m), \\ W^{[1]}.shape = (25, n_x),  \\ b^{[1]}.shape = (25, 1),  \\ W^{[2]}.shape = (12, 25) \\ b^{[2]}.shape = (12, 1) \\ W^{[3]}.shape = (2, 12) \\ b^{[3]}.shape = (2, 1). $
+Where, ![](https://latex.codecogs.com/gif.latex?%24%20X.shape%20%3D%20%28n_x%2C%20m%29%2C%20%5C%5C%20W%5E%7B%5B1%5D%7D.shape%20%3D%20%2825%2C%20n_x%29%2C%20%5C%5C%20b%5E%7B%5B1%5D%7D.shape%20%3D%20%2825%2C%201%29%2C%20%5C%5C%20W%5E%7B%5B2%5D%7D.shape%20%3D%20%2812%2C%2025%29%20%5C%5C%20b%5E%7B%5B2%5D%7D.shape%20%3D%20%2812%2C%201%29%20%5C%5C%20W%5E%7B%5B3%5D%7D.shape%20%3D%20%282%2C%2012%29%20%5C%5C%20b%5E%7B%5B3%5D%7D.shape%20%3D%20%282%2C%201%29.%20%24)
 
-here $n_x$ is 17,000.
+here ![](https://latex.codecogs.com/gif.latex?%24n_x%24) is 17,000.
 
-Also, the activation function used here $g^{[1]}$ and $g^{[2]}$ are relu. And the last function $g^{[3]}$ is the softmax.
+Also, the activation function used here ![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B1%5D%7D%24) and ![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B2%5D%7D%24) are relu. And the last function ![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B3%5D%7D%24) is the softmax.
 
-$A^{[3]}$ is our final output which can also be said as $\hat{y}$. Hence our error is $L(y - \hat{y})$. Also, our loss function is $$Loss = -(ylog\hat{y} -(1-y)log(1 - \hat{y}))$$.
+![](https://latex.codecogs.com/gif.latex?%24g%5E%7B%5B3%5D%7D%24) is our final output which can also be said as ![](https://latex.codecogs.com/gif.latex?%24%24%5Chat%7By%7D%24%24). Hence our error is ![](https://latex.codecogs.com/gif.latex?%24%24L%28y%20-%20%5Chat%7By%7D%29%24%24). Also, our loss function is ![](https://latex.codecogs.com/gif.latex?%24%24Loss%20%3D%20-%28ylog%5Chat%7By%7D%20-%281-y%29log%281%20-%20%5Chat%7By%7D%29%29%24%24)$.
 
 This is the function which we have to minimize.
 
@@ -37,11 +37,13 @@ When we completed with our training we get the weights which gave 99.42% trainin
 ***Before regularization***
 <div class = "row"><img src = "./images/fig4.PNG" style="height:300px;width:300px">
     
-So, to reduce high variance from the model few of the techniques are: increase the number of training images data which can be done either by adding some of the new clicked pics of dog-cat to the dataset or we can do data-augmentation on the available image data(i.e. generate image either by  croppping, flipping or rotating the image). We can also reduce the variance by regularization (either $L_1$ or $L_2$), dropout or by early stopping of model training.
+So, to reduce high variance from the model few of the techniques are: increase the number of training images data which can be done either by adding some of the new clicked pics of dog-cat to the dataset or we can do data-augmentation on the available image data(i.e. generate image either by  croppping, flipping or rotating the image). We can also reduce the variance by regularization (either ![](https://latex.codecogs.com/gif.latex?%24L_1%24) or ![](https://latex.codecogs.com/gif.latex?%24L_2%24), dropout or by early stopping of model training.
 
-So, we introduce $L_2$ regularization to the loss function and introduce dropout at the activation neurons with the keep_prob of 0.7. 
+So, we introduce ![](https://latex.codecogs.com/gif.latex?%24L_2%24) regularization to the loss function and introduce dropout at the activation neurons with the keep_prob of 0.7. 
     
 ***After regularization***
+
+
 <img src = "./images/fig5.PNG" style="height:300px;width:300px"></div>
 
 Thereon, we get the total test accuracy of 74.67% which is an improvement over the previous test accuracy. That means we get an increment of 14.91% over test accuray after introducing regularization to the model architecture.
