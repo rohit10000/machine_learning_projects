@@ -46,7 +46,7 @@ Every class will have a single curve.
 <i><b>Precision </b></i>is the proportion of all examples above the rank which are from the positive class.
 
 
-$$AP = \frac{1}{11}\sum_{r\in(0, 0.1, ..., 1)}P_{interp}(r)$$
+ $$AP = \frac{1}{11}\sum_{r\in(0, 0.1, ..., 1)}P_{interp}(r)$$
 
 
 $P_{interp}(r)$ is the interpolation r by taking the maximum precision measured for a method for which the corresponding recalll exceeds r. Interpolation reduces the wiggles in precision/recall curve.

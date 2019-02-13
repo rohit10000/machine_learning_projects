@@ -80,7 +80,7 @@ def predict(X, parameters):
               "W3": W3,
               "b3": b3}
     
-    x = tf.placeholder("float", [2500, 1])
+    x = tf.placeholder("float", [3072, 1])
     
     z3 = forward_propagation(x, params)
     p = tf.argmax(z3)
@@ -133,7 +133,7 @@ def initialize_parameters():
     tf.set_random_seed(1)                              # so that your "random" numbers match ours
         
     ### START CODE HERE ### (approx. 6 lines of code)
-    W1 = tf.get_variable("W1", [25,2500], initializer = tf.contrib.layers.xavier_initializer(seed = 1))
+    W1 = tf.get_variable("W1", [25,3072], initializer = tf.contrib.layers.xavier_initializer(seed = 1))
     b1 = tf.get_variable("b1", [25,1], initializer = tf.zeros_initializer())
     W2 = tf.get_variable("W2", [12,25], initializer = tf.contrib.layers.xavier_initializer(seed = 1))
     b2 = tf.get_variable("b2", [12,1], initializer = tf.zeros_initializer())
